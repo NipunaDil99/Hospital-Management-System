@@ -11,6 +11,6 @@ export class AppoitmentService {
   constructor(private http: HttpClient) { }
 
   create(appointment : Appointment) {
-    return this.http.post(`${this._baseUrl}/saveAppoitment`,appointment, {responseType: })
+    return this.http.post(`${this._baseUrl}/saveAppoitment`,appointment, {responseType: 'text'})
   }
 }
