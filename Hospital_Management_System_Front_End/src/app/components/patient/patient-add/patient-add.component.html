@@ -1,0 +1,157 @@
+<div class="main-content">
+	<div class="container-fluid mt--7">
+		<div class="row">
+			<div class="col-xl-8 order-xl-1">
+				<div position=relative class="card bg-secondary shadow">
+					<div class="card-header bg-white border-0">
+						<div class="row align-items-center">
+							<div class="col-8">
+								<h3 class="mb-0">Enter Patient's Details</h3>
+							</div>
+
+						</div>
+					</div>
+					<div class="card-body">
+						<form #form="ngForm" (ngSubmit)="onSubmit()">
+							<div class="pl-lg-4">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-patient-id">Patient ID</label>
+											<input type="number" id="input-patient-id" name="patient_id"
+												#patient_id="ngModel" [(ngModel)]="patient.patient_id"
+												class="form-control form-control-alternative" placeholder="1" required>
+											<label class="text-danger"
+												*ngIf="(patient_id.touched || form.submitted) && patient_id.errors?.['required']">
+												Patient ID is required
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="form-control-label" for="input-firsttname">First Name</label>
+											<input type="text" id="firstname" name="first_name" #first_name="ngModel"
+												[(ngModel)]="patient.first_name"
+												class="form-control form-control-alternative" placeholder="First Name"
+												required>
+											<label class="text-danger"
+												*ngIf="(first_name.touched || form.submitted) && first_name.errors?.['required']">
+												First name is required
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-lastname">Last Name</label>
+											<input type="text" id="input-lastname" name="last_name" #last_name="ngModel"
+												[(ngModel)]="patient.last_name"
+												class="form-control form-control-alternative" placeholder="Last Name"
+												required>
+											<label class="text-danger"
+												*ngIf="(last_name.touched || form.submitted) && last_name.errors?.['required']">
+												Last Name is required
+											</label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-gender">Gender</label>
+											<select id="select-Gender" name="gender" #gender="ngModel"
+												[(ngModel)]="patient.gender"
+												class="form-control form-control-alternative" required>
+												<option value="male">Male</option>
+												<option value="female">Female</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-blood_group">Blood Group</label>
+											<select id="select-bloodType" name="blood_group" #blood_group="ngModel"
+												[(ngModel)]="patient.blood_group"
+												class="form-control form-control-alternative" required>
+												<option value="A+">A+</option>
+												<option value="A-">A-</option>
+												<option value="B+">B+</option>
+												<option value="B-">B-</option>
+												<option value="O+">O+</option>
+												<option value="O-">O-</option>
+												<option value="AB+">AB+</option>
+												<option value="AB-">AB-</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-mobile-number">Mobile
+												number</label>
+											<input type="text" id="input-mobile-number" name="mobile_number"
+												#mobile_number="ngModel" [(ngModel)]="patient.mobile_number"
+												class="form-control form-control-alternative"
+												placeholder="Mobile Number" required>
+											<label class="text-danger"
+												*ngIf="(mobile_number.touched || form.submitted) && last_name.errors?.['required']">
+												Mobile Number is required
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-doc-address">Patient's
+												Address</label>
+											<input type="text" id="patient-address" name="address"
+												#address="ngModel" [(ngModel)]="patient.address"
+												class="form-control form-control-alternative"
+												placeholder="Doctor's Address" required>
+											<label class="text-danger"
+												*ngIf="(address.touched || form.submitted) && address.errors?.['required']">
+												Patient's address is required
+											</label>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-department">Date of
+												Birth</label>
+											<input type="date" id="patient-DOB" name="DOB" #DOB="ngModel"
+												[(ngModel)]="patient.dob" class="form-control form-control-alternative"
+												placeholder="1999/9/9" required>
+											<label class="text-danger" *ngIf="(DOB.touched || form.submitted) && DOB.errors?.['required']">>
+												DOB is required
+											</label>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group focused">
+											<label class="form-control-label" for="input-status">Status</label>
+											<select id="select-status" name="status" #status="ngModel"
+												[(ngModel)]="patient.status"
+												class="form-control form-control-alternative" required>
+												<option value="Admitted">Admitted</option>
+												<option value="Discharged">Discharged</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-4 text-right">
+									<button class="btn btn-sm btn-primary" [disabled]="form.invalid">Create
+										Patient</button>
+									<button class="btn btn-sm btn-primary" routerLink="">Cancel</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

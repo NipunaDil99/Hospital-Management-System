@@ -2,8 +2,7 @@ package com.HSM.Hospital_Management_System.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -22,4 +21,5 @@ public class Doctor {
     private String Doc_address;
     private String Email;
     private String Department;
+
 }

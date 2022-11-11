@@ -16,12 +16,10 @@ export class DoctorService {
   }
   getDoctor(id:any) {
     return this.http.get<DoctorModel[]>(`${this._baseUrl}/getDoctorId/`+id);
-    //return this.http.get<DoctorModel[]>(`${this._baseUrl}/getDoctorId/{id}`+id);
   }
 
   create(doctor: DoctorModel) {
     return this.http.post(`${this._baseUrl}/saveDoctor`, doctor);
-    //return this.http.post(`${this._baseUrl}/saveDoctor`, doctor, {responseType:'text'});
   }
   update(id:any, doctor: DoctorModel) {
     return this.http.put<DoctorModel>(`${this._baseUrl}/updateDoctor/`+id,doctor);

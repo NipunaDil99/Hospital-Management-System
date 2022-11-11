@@ -1,0 +1,68 @@
+<div class="main-content">
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col-xl-8 order-xl-1">
+        <div position=relative class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Update Prescription's Details</h3>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+              <div class="pl-lg-4">
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-drug_name">prescription Id</label>
+                      <input type="text" id="prescription-id" name="prescription_id" #prescription_id="ngModel"
+                        class="form-control form-control-alternative" [(ngModel)]="prescription.prescription_id"
+                        placeholder="1" required>
+                        <label class="text-danger"
+                        *ngIf="(prescription_id.touched || form.submitted ) && prescription_id.errors?.['required']">
+                          Id is required
+                        </label>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-drug_name">drug_name</label>
+                      <input type="text" id="drug_name" name="drug_name"
+                        class="form-control form-control-alternative" #drug_name="ngModel"
+                        [(ngModel)]="prescription.drug_name"
+                        placeholder="Drug Name" required>
+                        <label class="text-danger" *ngIf="(drug_name.touched || form.submitted) && drug_name.errors?.['required']">
+                          Drug Name is required
+                        </label>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group focused">
+                      <label class="form-control-label" for="input-lastname">dosage</label>
+                      <input type="text" id="input-dosage" name="dosage" #dosage="ngModel" [(ngModel)]="prescription.dosage"
+                        class="form-control form-control-alternative" placeholder="Dosage" required>
+                        <label class="text-danger" *ngIf="(dosage.touched || form.submitted) && dosage.errors?.['required']">
+                          Dosage is required</label>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-4 text-right">
+                  <button class="btn btn-sm btn-primary" [disabled]="form.invalid">Update prescription</button>
+                  <button class="btn btn-sm btn-primary" routerLink="">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

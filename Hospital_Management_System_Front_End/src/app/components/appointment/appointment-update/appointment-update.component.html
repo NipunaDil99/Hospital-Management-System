@@ -1,0 +1,71 @@
+<div class="main-content">
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col-xl-8 order-xl-1">
+        <div position=relative class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Update Appointment's Details</h3>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="onSubmit()" autocomplete="off">
+              <div class="pl-lg-4">
+                <div class="row">
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-problem">Appointment Id</label>
+                      <input type="text" id="appointment-id" name="appointment_id" #appointment_id="ngModel"
+                        class="form-control form-control-alternative" [(ngModel)]="appointment.appointment_id"
+                        placeholder="1" required>
+                        <label class="text-danger"
+                        *ngIf="(appointment_id.touched || form.submitted ) && appointment_id.errors?.['required']">
+                          Id is required
+                        </label>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-problem">Problem</label>
+                      <input type="text" id="problem" name="problem"
+                        class="form-control form-control-alternative" #problem="ngModel"
+                        [(ngModel)]="appointment.problem"
+                        placeholder="Problem" required>
+                        <label class="text-danger" *ngIf="(problem.touched || form.submitted) && problem.errors?.['required']">
+                          Problem is required
+                        </label>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="form-group focused">
+                      <label class="form-control-label" for="input-lastname">Status</label>
+                      <select id="input-status" name="status" #status="ngModel" [(ngModel)]="appointment.status">
+                        <option value="To Do">To Do</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                      </select>
+                        <label class="text-danger" *ngIf="(status.touched || form.submitted) && status.errors?.['required']">
+                          Status is required</label>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="col-4 text-right">
+                  <button class="btn btn-sm btn-primary" [disabled]="form.invalid">Update Appointment</button>
+                  <button class="btn btn-sm btn-primary" routerLink="">Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

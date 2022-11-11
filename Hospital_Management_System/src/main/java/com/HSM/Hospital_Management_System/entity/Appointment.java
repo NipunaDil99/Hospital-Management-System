@@ -21,7 +21,4 @@ public class Appointment {
     private String problem;
     private String status;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id")
-//    private Patient patient;
 }

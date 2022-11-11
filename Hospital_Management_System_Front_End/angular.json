@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "performance-appraisal-client": {
+    "hospital-management-system": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/performance-appraisal-client",
+            "outputPath": "dist/hospital-management-system",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -42,8 +42,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "4mb"
                 }
               ],
               "fileReplacements": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "performance-appraisal-client:build:production"
+              "browserTarget": "hospital-management-system:build:production"
             },
             "development": {
-              "browserTarget": "performance-appraisal-client:build:development"
+              "browserTarget": "hospital-management-system:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "performance-appraisal-client:build"
+            "browserTarget": "hospital-management-system:build"
           }
         },
         "test": {
@@ -102,6 +102,5 @@
         }
       }
     }
-  },
-  "defaultProject": "performance-appraisal-client"
+  }
 }

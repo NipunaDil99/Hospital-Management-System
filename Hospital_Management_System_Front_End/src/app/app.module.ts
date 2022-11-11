@@ -14,6 +14,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DoctorAddComponent } from './components/Doctor/doctor-add/doctor-add.component';
 import { DoctorUpdateComponent } from './components/Doctor/doctor-update/doctor-update.component';
 import { DoctorGetListComponent } from './components/Doctor/doctor-get-list/doctor-get-list.component';
+import { AppointmentAddComponent } from './components/appointment/appointment-add/appointment-add.component';
+import { AppointmentGetListComponent } from './components/appointment/appointment-get-list/appointment-get-list.component';
+import { AppointmentUpdateComponent } from './components/appointment/appointment-update/appointment-update.component';
+import { PatientAddComponent } from './components/patient/patient-add/patient-add.component';
+import { PatientGetListComponent } from './components/patient/patient-get-list/patient-get-list.component';
+import { PatientUpdateComponent } from './components/patient/patient-update/patient-update.component';
+import { PrescriptionAddComponent } from './components/prescription/prescription-add/prescription-add.component';
+import { PrescriptionGetListComponent } from './components/prescription/prescription-get-list/prescription-get-list.component';
+import { PrescriptionUpdateComponent } from './components/prescription/prescription-update/prescription-update.component';
 
 
 @NgModule({
@@ -27,7 +36,16 @@ import { DoctorGetListComponent } from './components/Doctor/doctor-get-list/doct
     DashboardComponent,
     DoctorAddComponent,
     DoctorUpdateComponent,
-    DoctorGetListComponent
+    DoctorGetListComponent,
+    AppointmentAddComponent,
+    AppointmentGetListComponent,
+    AppointmentUpdateComponent,
+    PatientAddComponent,
+    PatientGetListComponent,
+    PatientUpdateComponent,
+    PrescriptionAddComponent,
+    PrescriptionGetListComponent,
+    PrescriptionUpdateComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule,ReactiveFormsModule],
   providers: [],
