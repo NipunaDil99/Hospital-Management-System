@@ -6,8 +6,8 @@ import { PrescriptionModel } from '../models/prescription.model';
   providedIn: 'root'
 })
 export class PrescriptionService {
-  //private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/prescription';
-  private _baseUrl = 'http://localhost:8080/api/v1/prescription';
+  private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/prescription';
+
   constructor(private http: HttpClient) { }
 
   create(prescription : PrescriptionModel) {

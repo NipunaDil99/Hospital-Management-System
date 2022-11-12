@@ -7,8 +7,7 @@ import { DoctorModel } from '../models/doctor.model';
 })
 export class DoctorService {
 
-  //private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/doctor';
-  private _baseUrl = 'http://localhost:8080/api/v1/doctor';
+  private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/doctor';
 
   constructor(private http: HttpClient) {}
 

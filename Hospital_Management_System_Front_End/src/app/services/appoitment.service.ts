@@ -6,8 +6,7 @@ import { AppointmentModel } from '../models/appointment.model';
   providedIn: 'root'
 })
 export class AppointmentService {
-  //private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/appointment';
-  private _baseUrl = 'http://localhost:8080/api/v1/appointment';
+  private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/appointment';
 
   constructor(private http: HttpClient) { }
 
