@@ -42,17 +42,17 @@ export class PatientGetListComponent implements OnInit {
 			next: (res) => {
 				console.log(res);
 				if(res == null){
-					alert("Employee deleted");
+					alert("Patient deleted");
 					console.log(res);
 					this.getList();
-					this.router.navigate(["admin/patient-view"]);
+					this.router.navigate(["admin/patient-get-list"]);
 				}
 			},
 			error: (error)=>{
 				console.log(error);
 				this.isLoading = false;
 				console.log(error);
-				alert("Employee could not delete");
+				alert("Patient could not delete");
 			},
 		});
 	}

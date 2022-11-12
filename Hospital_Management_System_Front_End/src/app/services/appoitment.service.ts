@@ -6,12 +6,13 @@ import { AppointmentModel } from '../models/appointment.model';
   providedIn: 'root'
 })
 export class AppointmentService {
-  private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/appointment';
+  //private _baseUrl = 'http://hospitalmanagementsystem1-env.eba-k97j3tu3.ap-south-1.elasticbeanstalk.com/api/v1/appointment';
+  private _baseUrl = 'http://localhost:8080/api/v1/appointment';
 
   constructor(private http: HttpClient) { }
 
   create(appointment : AppointmentModel) {
-    return this.http.post(`${this._baseUrl}/saveAppointment`,appointment, {responseType: 'text'});
+    return this.http.post(`${this._baseUrl}/saveAppointment`,appointment);
   }
 
   getList() {
@@ -22,7 +23,7 @@ export class AppointmentService {
     return this.http.delete<string>(`${this._baseUrl}/deleteAppointment/`+appointment_id);
   }
 
-  update(appointment_id: number,appointment: AppointmentModel) {
+  update(appointment_id: any,appointment: AppointmentModel) {
     return this.http.put<AppointmentModel>(`${this._baseUrl}/updateAppointment/`+appointment_id,appointment);
   }
 

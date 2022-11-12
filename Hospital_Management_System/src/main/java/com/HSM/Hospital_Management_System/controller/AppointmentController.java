@@ -3,13 +3,14 @@ package com.HSM.Hospital_Management_System.controller;
 import com.HSM.Hospital_Management_System.entity.Appointment;
 import com.HSM.Hospital_Management_System.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/api/v1/appointment/")
+@RequestMapping(value = "api/v1/appointment/")
 @CrossOrigin
 public class AppointmentController {
     @Autowired
@@ -26,7 +27,7 @@ public class AppointmentController {
     }
 
     @DeleteMapping("/deleteAppointment/{id}")
-    public String deleteAppointment(@PathVariable int id){
+    public ResponseEntity<HttpStatus> deleteAppointment(@PathVariable int id){
         return service.deleteAppointment(id);
     }
 
@@ -36,7 +37,7 @@ public class AppointmentController {
     }
 
     @GetMapping("/getAppointment/{id}")
-    public Appointment getAppointmentById(@PathVariable int id){
+    public ResponseEntity<Appointment> getAppointmentById(@PathVariable int id){
         return service.getAppointmentById(id);
     }
 }

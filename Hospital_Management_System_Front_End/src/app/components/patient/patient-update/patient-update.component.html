@@ -16,20 +16,6 @@
 							<div class="pl-lg-4">
 								<div class="row">
 									<div class="col-lg-6">
-										<div class="form-group focused">
-											<label class="form-control-label" for="input-patient-id">Patient ID</label>
-											<input type="number" id="input-patient-id" name="patient_id"
-												#patient_id="ngModel" [(ngModel)]="patient.patient_id"
-												class="form-control form-control-alternative" placeholder="1" required>
-											<label class="text-danger"
-												*ngIf="(patient_id.touched || form.submitted) && patient_id.errors?.['required']">
-												Patient ID is required
-											</label>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-lg-6">
 										<div class="form-group">
 											<label class="form-control-label" for="input-firsttname">First Name</label>
 											<input type="text" id="firstname" name="first_name" #first_name="ngModel"
@@ -123,12 +109,12 @@
 										<div class="form-group focused">
 											<label class="form-control-label" for="input-department">Date of
 												Birth</label>
-											<input type="date" id="patient-DOB" name="DOB" #DOB="ngModel"
+											<input type="date" id="patient-DOB" name="dob" #dob="ngModel"
 												[(ngModel)]="patient.dob" class="form-control form-control-alternative"
 												placeholder="1999/9/9" required>
-											<label class="text-danger">
-												DOB is required
-											</label>
+                        <label class="text-danger" *ngIf="(dob.touched || form.submitted) && dob.errors?.['required']">>
+                          DOB is required
+                        </label>
 										</div>
 									</div>
 									<div class="col-lg-6">

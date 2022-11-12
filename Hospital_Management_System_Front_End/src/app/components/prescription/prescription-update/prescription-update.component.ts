@@ -35,7 +35,7 @@ export class PrescriptionUpdateComponent implements OnInit {
       next: (res) => {
         if (res) {
           this.isUpdating = false;
-          alert("prescription Details Updated");
+          alert("Prescription Details Updated");
           console.log('response: ' + res);
           this.router.navigate(["admin/prescription-get-list"]);
         }
@@ -43,7 +43,7 @@ export class PrescriptionUpdateComponent implements OnInit {
       error: (err) => {
         this.isUpdating = false;
         console.log('Error: ' + err);
-        alert("prescription Details not updated...!")
+        alert("Prescription Details not updated...!")
       },
     });
   }

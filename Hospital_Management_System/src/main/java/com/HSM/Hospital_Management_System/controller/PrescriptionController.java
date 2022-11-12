@@ -3,6 +3,7 @@ package com.HSM.Hospital_Management_System.controller;
 import com.HSM.Hospital_Management_System.entity.Prescription;
 import com.HSM.Hospital_Management_System.service.PrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,12 +22,12 @@ public class PrescriptionController {
     }
 
     @GetMapping("/getPrescription/{id}")
-    public Prescription getPrescriptionById(@PathVariable int id){
+    public ResponseEntity<Prescription> getPrescriptionById(@PathVariable int id){
         return service.getPrescriptionById(id);
     }
 
     @DeleteMapping("/deletePrescription/{id}")
-    public String deletePrescription(@PathVariable int id){
+    public ResponseEntity<HttpStatus> deletePrescription(@PathVariable int id){
         return service.deletePrescription(id);
     }
 

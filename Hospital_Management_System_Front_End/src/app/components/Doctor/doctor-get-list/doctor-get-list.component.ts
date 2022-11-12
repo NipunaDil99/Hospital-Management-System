@@ -42,7 +42,7 @@ export class DoctorGetListComponent implements OnInit {
       next: (res) =>{
         console.log(res);
         if(res == null){
-          alert("Employee deleted");
+          alert("Doctor deleted");
           console.log(res);
           this.getList();
           this.router.navigate(["admin/doctor-get-list"]);
@@ -52,7 +52,7 @@ export class DoctorGetListComponent implements OnInit {
       console.log(error);
       this.isLoading = false;
       console.log(error);
-      alert("Employee can't delete")
+      alert("Doctor can't delete")
     },
   });
 }

@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 @Transactional
@@ -36,7 +36,7 @@ public class PatientService {
         updatePatient.setBlood_group(patientDetails.getBlood_group());
         updatePatient.setMobile_number(patientDetails.getMobile_number());
         updatePatient.setAddress(patientDetails.getAddress());
-        updatePatient.setDOB(patientDetails.getDOB());
+        updatePatient.setDob(patientDetails.getDob());
         updatePatient.setStatus(patientDetails.getStatus());
 
 

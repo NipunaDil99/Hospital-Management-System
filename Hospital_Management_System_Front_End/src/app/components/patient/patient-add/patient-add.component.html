@@ -122,10 +122,10 @@
 										<div class="form-group focused">
 											<label class="form-control-label" for="input-department">Date of
 												Birth</label>
-											<input type="date" id="patient-DOB" name="DOB" #DOB="ngModel"
+											<input type="date" id="patient-DOB" name="dob" #dob="ngModel"
 												[(ngModel)]="patient.dob" class="form-control form-control-alternative"
 												placeholder="1999/9/9" required>
-											<label class="text-danger" *ngIf="(DOB.touched || form.submitted) && DOB.errors?.['required']">>
+											<label class="text-danger" *ngIf="(dob.touched || form.submitted) && dob.errors?.['required']">>
 												DOB is required
 											</label>
 										</div>

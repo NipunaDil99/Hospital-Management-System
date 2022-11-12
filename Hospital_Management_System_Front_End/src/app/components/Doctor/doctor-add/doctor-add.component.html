@@ -19,16 +19,18 @@
                     <div class="form-group focused">
                       <label class="form-control-label" for="input-doctor-id">Doctor ID</label>
                       <input type="number" id="input-doctor-id" name="doctor_id" #doctor_id="ngModel"
-                        [(ngModel)]="doctor.doctor_id" class="form-control form-control-alternative"
-                        placeholder="1" required>
+                        [(ngModel)]="doctor.doctor_id" class="form-control form-control-alternative" placeholder="1"
+                        required>
                       <label class="text-danger"
                         *ngIf="(doctor_id.touched || form.submitted) && doctor_id.errors?.['required']">
                         Doctor ID is required
                       </label>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-lg-6">
-                    <div class="form-group">
+                    <div class="form-group focused">
                       <label class="form-control-label" for="input-firsttname">First Name</label>
                       <input type="text" id="firstname" name="first_name" #first_name="ngModel"
                         [(ngModel)]="doctor.first_name" class="form-control form-control-alternative"
@@ -39,12 +41,16 @@
                       </label>
                     </div>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-lg-6">
                     <div class="form-group focused">
                       <label class="form-control-label" for="input-lastname">Last Name</label>
-                      <input type="text" id="input-lastname" name="last_name" #last_name="ngModel" [(ngModel)]="doctor.last_name"
-                        class="form-control form-control-alternative" placeholder="Last Name" required>
-                      <label class="text-danger" *ngIf="(last_name.touched || form.submitted) && last_name.errors?.['required']">
+                      <input type="text" id="input-lastname" name="last_name" #last_name="ngModel"
+                        [(ngModel)]="doctor.last_name" class="form-control form-control-alternative"
+                        placeholder="Last Name" required>
+                      <label class="text-danger"
+                        *ngIf="(last_name.touched || form.submitted) && last_name.errors?.['required']">
                         Last Name is required
                       </label>
                     </div>
@@ -71,9 +77,11 @@
                   <div class="col-lg-6">
                     <div class="form-group focused">
                       <label class="form-control-label" for="input-mobile-number">Mobile number</label>
-                      <input type="text" id="input-mobile-number" name="mobile_number" #mobile_number="ngModel" [(ngModel)]="doctor.mobile_number"
-                        class="form-control form-control-alternative" placeholder="Mobile Number" required>
-                      <label class="text-danger" *ngIf="(mobile_number.touched || form.submitted) && last_name.errors?.['required']">
+                      <input type="text" id="input-mobile-number" name="mobile_number" #mobile_number="ngModel"
+                        [(ngModel)]="doctor.mobile_number" class="form-control form-control-alternative"
+                        placeholder="Mobile Number" required>
+                      <label class="text-danger"
+                        *ngIf="(mobile_number.touched || form.submitted) && last_name.errors?.['required']">
                         Mobile Number is required
                       </label>
                     </div>
@@ -83,9 +91,11 @@
                   <div class="col-lg-6">
                     <div class="form-group focused">
                       <label class="form-control-label" for="input-doc-address">Doctor's Address</label>
-                      <input type="text" id="doctor-address" name="doc_address" #doc_address="ngModel" [(ngModel)]="doctor.doc_address"
-                        class="form-control form-control-alternative" placeholder="Doctor's Address" required>
-                      <label class="text-danger" *ngIf="(doc_address.touched || form.submitted) && doc_address.errors?.['required']">
+                      <input type="text" id="doctor-address" name="doc_address" #doc_address="ngModel"
+                        [(ngModel)]="doctor.doc_address" class="form-control form-control-alternative"
+                        placeholder="Doctor's Address" required>
+                      <label class="text-danger"
+                        *ngIf="(doc_address.touched || form.submitted) && doc_address.errors?.['required']">
                         Doctor's address is required
                       </label>
                     </div>
@@ -95,11 +105,17 @@
                   <div class="col-lg-6">
                     <div class="form-group focused">
                       <label class="form-control-label" for="input-department">Department</label>
-                      <input type="text" id="doctor-department" name="department" #department="ngModel" [(ngModel)]="doctor.department"
-                        class="form-control form-control-alternative" placeholder="Doctor's Department" required>
-                      <label class="text-danger" *ngIf="(department.touched || form.submitted) && department.errors?.['required']">
-                        Department is required
-                      </label>
+                      <select id="select-status" name="department" #department="ngModel"
+												[(ngModel)]="doctor.department"
+												class="form-control form-control-alternative" required>
+												<option value="Allergists">Allergists</option>
+												<option value="Dermatologists">Dermatologists</option>
+                        <option value="Ophthalmologists">Ophthalmologists</option>
+                        <option value="Cardiologists">Cardiologists</option>
+                        <option value="Endocrinologists">Endocrinologists</option>
+                        <option value="Gastroenterologists">Gastroenterologists</option>
+                        <option value="Nephrologists">Nephrologists</option>
+											</select>
                     </div>
                   </div>
                 </div>

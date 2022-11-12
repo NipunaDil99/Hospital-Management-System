@@ -16,9 +16,9 @@ import java.util.Date;
 @Table(name = "prescription")
 public class Prescription {
     @Id
-    private int patient_id;
+    private int prescription_id;
     private String drug_name;
     private String dosage;
-    private Date issued_date;
-
+    private Date issued_date; 
+    
 }

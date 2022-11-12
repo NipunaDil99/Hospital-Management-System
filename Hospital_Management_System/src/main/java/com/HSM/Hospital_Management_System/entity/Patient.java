@@ -16,14 +16,14 @@ import java.util.Date;
 public class Patient {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int patient_id;
     private String first_name;
     private String last_name;
     private String gender;
     private String blood_group;
     private String mobile_number;
     private String address;
-    private Date DOB;
+    private Date dob;
     private String status;
 
 }

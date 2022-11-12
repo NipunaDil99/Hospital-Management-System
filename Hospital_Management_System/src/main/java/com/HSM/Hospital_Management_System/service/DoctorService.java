@@ -30,7 +30,6 @@ public class DoctorService {
     public ResponseEntity<Doctor> updateDoctor(int id, Doctor doctorDetails){
         Doctor updatedoctor = doctorRepo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Doctor not exists with this id: "+id));
 
-        updatedoctor.setDoctor_id(doctorDetails.getDoctor_id());
         updatedoctor.setEmail(doctorDetails.getEmail());
         updatedoctor.setDepartment(doctorDetails.getDepartment());
         updatedoctor.setFirst_name(doctorDetails.getFirst_name());

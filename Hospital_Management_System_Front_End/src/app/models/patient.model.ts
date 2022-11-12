@@ -1,5 +1,5 @@
 export class PatientModel{
-	patient_id!:number;
+	  patient_id!:number;
     first_name!:string;
     last_name!:string;
     gender!:string;

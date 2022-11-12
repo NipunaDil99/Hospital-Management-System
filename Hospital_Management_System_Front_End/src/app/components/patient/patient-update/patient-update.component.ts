@@ -38,14 +38,14 @@ export class PatientUpdateComponent implements OnInit {
 			this.isUpdating = false;
 			alert("Patient Details Updated");
 			console.log('response:'+res);
-			this.router.navigate(["admin/patient-view"]);
+			this.router.navigate(["admin/patient-get-list"]);
 		}
 	},
 
 	error: (err) => {
 		this.isUpdating = false;
 		console.log('error:' + err);
-		alert("Doctor Details not updated !")
+		alert("Patient Details not updated !")
 	}
 	});
   }
